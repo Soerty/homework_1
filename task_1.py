@@ -6,6 +6,9 @@ def fibonachi(n):
 
     If the number is greater than zero, then returns the Fibonacci number.
     Else return 0.
+    
+    :param n: The number
+    :return: returns Fibonacci number
 
     >>> fibonachi(-10)
     0
