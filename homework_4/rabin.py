@@ -1,6 +1,16 @@
 #-*- coding: utf-8 -*-
 import random
 
+"""
+Оценка сложности:
+    O(|T|+ n1|P1| + n2|P2| ... +ni|Pi|)
+
+Где 1, 2 ... i - индексы,
+|T| длина текста,
+|Pi| - длина паттерна,
+ni - кол-во вхождений паттерна Pi
+"""
+
 
 class PolynomialHash:
     _prime_numbers = [
@@ -72,7 +82,7 @@ def search_rabin_multi(text, patterns):
             [index, PolynomialHash(text[index: index + len(pattern.string)])]
                 for index in range(len(text) - len(pattern.string) + 1)
         )
-        indices.append([i for i, tp in text_patterns if tp.hash == pattern.hash])
+        indices.append([i for i, tp in text_patterns if tp.hash == pattern.hash and tp.string == pattern.string])
 
     return indices
 
